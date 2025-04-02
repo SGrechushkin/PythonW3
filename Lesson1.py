@@ -62,5 +62,5 @@ fruits=["apple","banana","cherry"]
 x,y,z=fruits
 print(x,y,z)
 '''
-    #Python - Output Variables for Lesson2
-'''https://www.w3schools.com/python/python_variables_output.asp'''
+
+
