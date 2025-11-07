@@ -7,7 +7,15 @@ def my_function():
   print("Enter the second number")
   num2 = int(input())
   # запитуємо введення другого числа та перетворюємо його у ціле
-  print (f"Result of addition: {num1 + num2}")
+  add = num1 + num2
+  mult = num1 * num2
+  div = num1 / num2
+
+
+  return add, mult, div
+sum_result, mult_result, div_result = my_function()
+print (f"Result of addition: {sum_result}")
+'''
   # Використовуємо f-string для виводу суми чисел з текстом. Мені не дуже подобається, бо я про неї забуваю
   print ("Result of multiplication: ", num1 * num2)
   # Використовую кому для виводу декілької аргументів через прінт.
@@ -16,3 +24,4 @@ def my_function():
 
 my_function()
 # Викликаю функцію.
+'''
