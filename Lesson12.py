@@ -97,3 +97,48 @@ my_function("Brazil")
 '''
 
 #Passing a List as an Argument
+'''
+def my_function(fruits):
+  for fruit in fruits:
+    print(fruit)
+
+my_fruits = ["apple", "banana", "cherry"]
+my_function(my_fruits)
+'''
+
+#Sending a dictionary as an argument:
+'''
+def my_function(person):
+  print("Name:", person["name"])
+  print("Age:", person["age"])
+
+my_person = {"name": "Emil", "age": 25}
+my_function(my_person)
+'''
+
+#Return Values
+#Functions can return values using the return statement:
+
+'''
+def my_function(x, y):
+  return x + y
+
+result = my_function(5, 3)
+print(result)
+'''
+
+#Returning Different Data Types
+'''
+def my_function():
+  return ["apple", "banana", "cherry"]
+
+fruits = my_function()
+print(fruits[0])
+print(fruits[1])
+print(fruits[2])
+'''
+def add_numbers(a, b):
+    print(a + b)
+
+result = add_numbers(2, 3)
+print(result)
