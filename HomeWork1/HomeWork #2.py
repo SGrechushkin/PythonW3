@@ -1,3 +1,5 @@
+from os.path import commonpath
+
 default_list1 = [3, 8, 1, 6, 12, 99, 2, 200, 1000, 5]
 default_list2 = [99, 7, 3, 101, 12, 22, 67]
 
@@ -22,9 +24,7 @@ def choose_data():
             print ("Incorrect item selected")
 
 
-
-
-def show_menu():
+def choose_action():
     while True:
         print("Select an action (enter a letter):")
         print("Enter 'a' to Display a list of elements which exist in both lists.")
@@ -41,9 +41,58 @@ def show_menu():
         else:
             print("Incorrect item selected. Please re-enter.")
 
-list1, list2 = choose_data()
-action = show_menu()
+def common_elements(list1, list2):
+    set1 = set(list1)
+    set2 = set(list2)
 
-print("\nYou selected:", action)
-print("List1:", list1)
-print("List2:", list2)
+    common = set1 & set2
+    return common
+
+
+def unique_elements(list1, list2):
+    set1 = set(list1)
+    set2 = set(list2)
+
+    unique = set1 ^ set2
+    return unique
+
+def sort_lists_asc(list1, list2):
+    asc_list1 = sorted(list1)
+    asc_list2 = sorted(list2)
+
+    return asc_list1, asc_list2
+
+def sort_lists_des(list1, list2):
+    des_list1 = sorted(list1, reverse=True)
+    des_list2 = sorted(list2, reverse=True)
+
+    return des_list1, des_list2
+
+def elements_less_than_30(list1, list2):
+    less_list1 = [x for x in list1 if x < 30]
+    less_list2 = [x for x in list2 if x < 30]
+
+    less_than_30 = less_list1 + less_list2
+    return less_than_30
+
+def main():
+    list1, list2 = choose_data()
+    action = choose_action()
+    common = common_elements(list1, list2)
+    unique = unique_elements(list1, list2)
+    asc_list1, asc_list2 = sort_lists_asc(list1, list2)
+    des_list1, des_list2 = sort_lists_des(list1, list2)
+    less_than_30 = elements_less_than_30(list1, list2)
+
+    if action == "a":
+        print(common_elements(list1, list2))
+    elif action == "b":
+        print(unique_elements(list1, list2))
+    elif action == "c":
+        print(sort_lists_asc(list1, list2))
+    elif action == "d":
+        print(sort_lists_des(list1, list2))
+    elif action == "e":
+        print(elements_less_than_30(list1, list2))
+
+main()
