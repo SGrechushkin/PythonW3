@@ -75,24 +75,45 @@ def elements_less_than_30(list1, list2):
     less_than_30 = less_list1 + less_list2
     return less_than_30
 
+def continue_actions():
+    while True:
+        print ("do you want to continue enter 'yes' or 'no':")
+        ansver=input().strip().lower()
+
+        if ansver == "yes":
+            return True
+        elif ansver == "no":
+            print ("The operation is over")
+            return False
+        else:
+            print("Incorrect input. Please enter 'yes' or 'no'.")
+
+
+
 def main():
     list1, list2 = choose_data()
-    action = choose_action()
+   # action = choose_action()
     common = common_elements(list1, list2)
     unique = unique_elements(list1, list2)
     asc_list1, asc_list2 = sort_lists_asc(list1, list2)
     des_list1, des_list2 = sort_lists_des(list1, list2)
     less_than_30 = elements_less_than_30(list1, list2)
 
-    if action == "a":
-        print(common_elements(list1, list2))
-    elif action == "b":
-        print(unique_elements(list1, list2))
-    elif action == "c":
-        print(sort_lists_asc(list1, list2))
-    elif action == "d":
-        print(sort_lists_des(list1, list2))
-    elif action == "e":
-        print(elements_less_than_30(list1, list2))
+    while True:
+        action = choose_action()
+
+        if action == "a":
+            print(common_elements(list1, list2))
+        elif action == "b":
+            print(unique_elements(list1, list2))
+        elif action == "c":
+            print(sort_lists_asc(list1, list2))
+        elif action == "d":
+            print(sort_lists_des(list1, list2))
+        elif action == "e":
+            print(elements_less_than_30(list1, list2))
+
+        if not continue_actions():
+            break
 
 main()
