@@ -101,12 +101,6 @@ def continue_actions():
 
 def main():
     list1, list2 = choose_data()
-   # action = choose_action()
-    common = common_elements(list1, list2)
-    unique = unique_elements(list1, list2)
-    asc_list1, asc_list2 = sort_lists_asc(list1, list2)
-    des_list1, des_list2 = sort_lists_des(list1, list2)
-    less_than_30 = elements_less_than_30(list1, list2)
 
     while True:
         action = choose_action()
