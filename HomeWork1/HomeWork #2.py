@@ -1,19 +1,25 @@
 from os.path import commonpath
-
+# add default lists
 default_list1 = [3, 8, 1, 6, 12, 99, 2, 200, 1000, 5]
 default_list2 = [99, 7, 3, 101, 12, 22, 67]
 
+#Function for choosing the lists
 def choose_data():
+   #Endless cycle
     while True:
         print ("Choose the test data: input 'a' for Default test data or 'b' to Enter your own test data")
+        #Input in lower cases without spaces
         choice = input().strip().lower()
 
         if choice  == 'a':
+            # Return values to function
             return default_list1, default_list2
 
         elif choice  == 'b':
                 print  ("Enter the first list of numbers separated by spaces. For example, '1 2 3 4'")
+                #Create a list from the input. Split - separate the input by spaces
                 raw1 = input().split()
+                #Convert values to a list
                 custom_list1 = [int(x) for x in raw1]
 
                 print("Enter the second list of numbers separated by spaces. For example, '1 2 3 4'")
@@ -38,15 +44,18 @@ def choose_action():
 
         if action in ["a", "b", "c", "d", "e"]:
             return action
+        #Rerun function if selected wrong letter, because no return in function
         else:
             print("Incorrect item selected. Please re-enter.")
 
+#Logical functions
 def common_elements(list1, list2):
+    #Converting lists to sets
     set1 = set(list1)
     set2 = set(list2)
-
+    #Select all common elements from 2 sets
     common = set1 & set2
-    return common
+    return list(common)
 
 
 def unique_elements(list1, list2):
@@ -54,7 +63,7 @@ def unique_elements(list1, list2):
     set2 = set(list2)
 
     unique = set1 ^ set2
-    return unique
+    return list(unique)
 
 def sort_lists_asc(list1, list2):
     asc_list1 = sorted(list1)
@@ -107,9 +116,13 @@ def main():
         elif action == "b":
             print(unique_elements(list1, list2))
         elif action == "c":
-            print(sort_lists_asc(list1, list2))
+            asc_list1, asc_list2 = sort_lists_asc(list1, list2)
+            print(asc_list1)
+            print(asc_list2)
         elif action == "d":
-            print(sort_lists_des(list1, list2))
+            des_list1, des_list2 = sort_lists_des(list1, list2)
+            print(des_list1)
+            print(des_list2)
         elif action == "e":
             print(elements_less_than_30(list1, list2))
 
