@@ -133,5 +133,6 @@ def main():
         #Chek the ansver from continue_actions() function and break if False
         if not continue_actions():
             break
+
 # Call the main function
 main()
