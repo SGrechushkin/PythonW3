@@ -72,5 +72,6 @@ def main():
         # Handle incorrect input
         else:
             print("Incorrect item selected. Please re-enter.")
+
 # Call the main function
 main()
